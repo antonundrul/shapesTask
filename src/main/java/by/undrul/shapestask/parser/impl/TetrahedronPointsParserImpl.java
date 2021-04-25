@@ -2,18 +2,18 @@ package by.undrul.shapestask.parser.impl;
 
 import by.undrul.shapestask.entity.Point;
 import by.undrul.shapestask.factory.impl.PointFactoryImpl;
-import by.undrul.shapestask.parser.TetrahedrPointsParser;
+import by.undrul.shapestask.parser.TetrahedronPointsParser;
 import by.undrul.shapestask.validator.PointsLineValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 
-public class TetrahedrPointsParserImpl implements TetrahedrPointsParser {
+public class TetrahedronPointsParserImpl implements TetrahedronPointsParser {
     private static Logger logger = LogManager.getLogger();
     private static final String REGEX_FOR_SPLIT = "\\s+";
 
-    public TetrahedrPointsParserImpl() {
+    public TetrahedronPointsParserImpl() {
     }
 
     @Override
@@ -24,7 +24,7 @@ public class TetrahedrPointsParserImpl implements TetrahedrPointsParser {
         PointFactoryImpl pointFactory = new PointFactoryImpl();
 
         for (String line : dataFromFile) {
-            if (PointsLineValidator.validatePointsLine(line)) {
+            if (PointsLineValidator.isPointsLineValid(line)) {
                 String[] pointsLine = line.split(REGEX_FOR_SPLIT);
                 for (int i = 0; i < pointsLine.length; i += 3) {
                     double x = Double.parseDouble(pointsLine[i]);
@@ -34,9 +34,7 @@ public class TetrahedrPointsParserImpl implements TetrahedrPointsParser {
                     points.add(point);
                 }
             }
-            else{
-                logger.info("The line "+line+" in not valid");
-            }
+
         }
 
         return points;

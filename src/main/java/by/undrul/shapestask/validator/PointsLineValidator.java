@@ -8,11 +8,7 @@ public class PointsLineValidator {
     private static final String REGEX_FOR_POINTS = "(-?(0|[1-9]\\d*)(\\.\\d+)?)";
     private static final String REGEX_FOR_SPLIT = "\\s+";
 
-
-    public PointsLineValidator() {
-    }
-
-    public static boolean validatePointsLine(String line) {
+    public static boolean isPointsLineValid(String line) {
         logger.info("Method to validate points line start");
 
         boolean isVal = false;
@@ -23,9 +19,13 @@ public class PointsLineValidator {
                     isVal = true;
                 } else {
                     isVal = false;
+                    logger.info("The string "+line+" has an invalid parametr");
                     break;
                 }
             }
+        }
+        else {
+            logger.info("The string "+line+" has not enough parameters "+elements.length);
         }
 
         return isVal;

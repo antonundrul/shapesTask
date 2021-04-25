@@ -8,7 +8,7 @@ import java.io.File;
 public class FileValidator {
     private static Logger logger = LogManager.getLogger();
 
-    public static boolean validateFile(String path) {
+    public static boolean isFileValid(String path) {
 
         logger.info("Method to validate file start");
 

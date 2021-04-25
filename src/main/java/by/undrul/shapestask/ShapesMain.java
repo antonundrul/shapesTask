@@ -1,13 +1,9 @@
 package by.undrul.shapestask;
 
-import by.undrul.shapestask.creator.TetrahedronRepositoryCreator;
 import by.undrul.shapestask.creator.impl.TetrahedronRepositoryCreatorImpl;
 import by.undrul.shapestask.entity.Point;
-import by.undrul.shapestask.entity.Tetrahedron;
 import by.undrul.shapestask.exception.ShapeException;
-import by.undrul.shapestask.factory.impl.PointFactoryImpl;
-import by.undrul.shapestask.factory.impl.TetrahedronFactoryImpl;
-import by.undrul.shapestask.parser.impl.TetrahedrPointsParserImpl;
+import by.undrul.shapestask.parser.impl.TetrahedronPointsParserImpl;
 import by.undrul.shapestask.reader.impl.DataReaderImpl;
 import by.undrul.shapestask.repozitory.TetrahedronRepository;
 import org.apache.logging.log4j.LogManager;
@@ -21,7 +17,7 @@ public class ShapesMain {
 
     public static void main(String[] args) {
         DataReaderImpl dataReader = new DataReaderImpl();
-        TetrahedrPointsParserImpl tetrahedrPointsParser = new TetrahedrPointsParserImpl();
+        TetrahedronPointsParserImpl tetrahedrPointsParser = new TetrahedronPointsParserImpl();
         TetrahedronRepositoryCreatorImpl tetrahedronRepositoryCreator = new TetrahedronRepositoryCreatorImpl();
         TetrahedronRepository tetrahedronRepository;;
 

@@ -4,6 +4,6 @@ import by.undrul.shapestask.entity.Point;
 
 import java.util.ArrayList;
 
-public interface TetrahedrPointsParser {
+public interface TetrahedronPointsParser {
     ArrayList<Point> parsePoints(ArrayList<String> dataFromFile);
 }

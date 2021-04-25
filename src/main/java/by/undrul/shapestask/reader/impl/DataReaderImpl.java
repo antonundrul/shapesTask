@@ -20,7 +20,7 @@ public class DataReaderImpl implements DataReader {
     public ArrayList<String> readDataFromFile(String path) throws ShapeException {
         logger.info("Method to read data from file started");
 
-        if (!FileValidator.validateFile(path)) {
+        if (!FileValidator.isFileValid(path)) {
             throw new ShapeException("File " + path + " is empty or don't exist or has incorrect filepath");
         }
 
