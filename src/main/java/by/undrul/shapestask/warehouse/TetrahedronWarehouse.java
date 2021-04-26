@@ -23,7 +23,9 @@ public class TetrahedronWarehouse {
         return parametrsMap.get(key);
     }
 
-    public TetrahedronParametr putParametr(Integer key, TetrahedronParametr parametr){
+    public TetrahedronParametr putParametr(Integer key, double surfaceArea,double volume){
+        TetrahedronParametr parametr = new TetrahedronParametr(surfaceArea,volume);
+
         return parametrsMap.put(key, parametr);
     }
 
