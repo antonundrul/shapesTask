@@ -3,36 +3,17 @@ package by.undrul.shapestask.repozitory;
 import by.undrul.shapestask.entity.Tetrahedron;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
-public class TetrahedronRepository {
-    private ArrayList<Tetrahedron> tetrahedrons;
-    private static TetrahedronRepository instance;
+public interface TetrahedronRepository {
+    void add(Tetrahedron tetrahedron);
 
-    private TetrahedronRepository() {
-        tetrahedrons = new ArrayList<>();
-    }
+    void remove(Tetrahedron tetrahedron);
 
-    public static TetrahedronRepository getInstance() {
-        if (instance == null) {
-            instance = new TetrahedronRepository();
-        }
-        return instance;
-    }
+    Tetrahedron getTetrahedron(int index);
 
-    public void add(Tetrahedron tetrahedron){
-        tetrahedrons.add(tetrahedron);
-    }
+    ArrayList<Tetrahedron> getAll();
 
-    public void remove(Tetrahedron tetrahedron){
-        tetrahedrons.remove(tetrahedron);
-    }
-
-    public Tetrahedron getTetrahedron(int index){
-        return tetrahedrons.get(index);
-    }
-
-    public ArrayList<Tetrahedron> getAll(){
-        return tetrahedrons;
-    }
-
+    ArrayList<Tetrahedron> sort(Comparator<? super Tetrahedron> comparator);
 }

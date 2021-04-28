@@ -1,18 +1,18 @@
 package by.undrul.shapestask.entity;
 
-import by.undrul.shapestask.observer.Observable;
-import by.undrul.shapestask.observer.Observer;
+import by.undrul.shapestask.observer.TetrahedronObservable;
+import by.undrul.shapestask.observer.TetrahedronObserver;
 import by.undrul.shapestask.observer.TetrahedronEvent;
 
 import java.util.ArrayList;
 
-public class Tetrahedron implements Observable {
+public class Tetrahedron implements TetrahedronObservable {
     private int id;
     private Point apexPoint;
     private Point basePoint1;
     private Point basePoint2;
     private Point basePoint3;
-    private ArrayList<Observer> observers = new ArrayList<>();
+    private ArrayList<TetrahedronObserver> tetrahedronObservers = new ArrayList<>();
 
     public Tetrahedron(Point apexPoint, Point basePoint1, Point basePoint2, Point basePoint3) {
         this.apexPoint = apexPoint;
@@ -103,21 +103,21 @@ public class Tetrahedron implements Observable {
     }
 
     @Override
-    public void attach(Observer observer) {
-        observers.add(observer);
+    public void attach(TetrahedronObserver tetrahedronObserver) {
+        tetrahedronObservers.add(tetrahedronObserver);
     }
 
     @Override
-    public void detach(Observer observer) {
-        observers.remove(observer);
+    public void detach(TetrahedronObserver tetrahedronObserver) {
+        tetrahedronObservers.remove(tetrahedronObserver);
     }
 
     @Override
     public void notifyObservers() {
         TetrahedronEvent event = new TetrahedronEvent(this);
-        if (!observers.isEmpty()) {
-            for (Observer observer : observers) {
-                observer.changeParameters(event);
+        if (!tetrahedronObservers.isEmpty()) {
+            for (TetrahedronObserver tetrahedronObserver : tetrahedronObservers) {
+                tetrahedronObserver.changeParameters(event);
             }
         }
     }

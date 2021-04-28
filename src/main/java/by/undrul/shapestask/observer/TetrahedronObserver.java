@@ -1,5 +1,5 @@
 package by.undrul.shapestask.observer;
 
-public interface Observer {
+public interface TetrahedronObserver {
     void changeParameters(TetrahedronEvent event);
 }

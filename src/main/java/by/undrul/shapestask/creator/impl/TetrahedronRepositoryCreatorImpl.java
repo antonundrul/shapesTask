@@ -4,7 +4,7 @@ import by.undrul.shapestask.creator.TetrahedronRepositoryCreator;
 import by.undrul.shapestask.entity.Point;
 import by.undrul.shapestask.entity.Tetrahedron;
 import by.undrul.shapestask.factory.impl.TetrahedronFactoryImpl;
-import by.undrul.shapestask.repozitory.TetrahedronRepository;
+import by.undrul.shapestask.repozitory.impl.TetrahedronRepositoryImpl;
 import by.undrul.shapestask.validator.TetrahedronValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,9 +18,9 @@ public class TetrahedronRepositoryCreatorImpl implements TetrahedronRepositoryCr
     }
 
     @Override
-    public TetrahedronRepository createTetrahedronRepository(ArrayList<Point> points) {
+    public TetrahedronRepositoryImpl createTetrahedronRepository(ArrayList<Point> points) {
         logger.info("Method to create tetrahedron repository start");
-        TetrahedronRepository tetrahedronRepository = TetrahedronRepository.getInstance();
+        TetrahedronRepositoryImpl tetrahedronRepositoryImpl = TetrahedronRepositoryImpl.getInstance();
         TetrahedronFactoryImpl tetrahedronFactory = new TetrahedronFactoryImpl();
 
         for(int i=0;i< points.size();i+=4){
@@ -30,7 +30,7 @@ public class TetrahedronRepositoryCreatorImpl implements TetrahedronRepositoryCr
             Point basePoint3 = points.get(i+3);
             Tetrahedron tetrahedron = tetrahedronFactory.createTetrahedron(apexPoint,basePoint1,basePoint2,basePoint3);
             if (TetrahedronValidator.isTetrahedronValid(tetrahedron)) {
-                tetrahedronRepository.add(tetrahedron);
+                tetrahedronRepositoryImpl.add(tetrahedron);
                 logger.info("Tetrahedron with id = "+tetrahedron.getId()+" added to repository");
             }
             else{
@@ -40,6 +40,6 @@ public class TetrahedronRepositoryCreatorImpl implements TetrahedronRepositoryCr
 
         logger.info("Tetrahedron repository created");
 
-        return tetrahedronRepository;
+        return tetrahedronRepositoryImpl;
     }
 }

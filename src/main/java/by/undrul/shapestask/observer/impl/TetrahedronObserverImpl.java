@@ -1,15 +1,13 @@
 package by.undrul.shapestask.observer.impl;
 
 import by.undrul.shapestask.entity.Tetrahedron;
-import by.undrul.shapestask.exception.ShapeException;
-import by.undrul.shapestask.observer.Observer;
 import by.undrul.shapestask.observer.TetrahedronEvent;
 import by.undrul.shapestask.service.impl.TetrahedronCalculateServiceImpl;
 import by.undrul.shapestask.warehouse.TetrahedronWarehouse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class TetrahedronObserver implements Observer {
+public class TetrahedronObserverImpl implements by.undrul.shapestask.observer.TetrahedronObserver {
         private static Logger logger = LogManager.getLogger();
 
     @Override

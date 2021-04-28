@@ -5,7 +5,7 @@ import by.undrul.shapestask.entity.Point;
 import by.undrul.shapestask.exception.ShapeException;
 import by.undrul.shapestask.parser.impl.TetrahedronPointsParserImpl;
 import by.undrul.shapestask.reader.impl.DataReaderImpl;
-import by.undrul.shapestask.repozitory.TetrahedronRepository;
+import by.undrul.shapestask.repozitory.impl.TetrahedronRepositoryImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,14 +19,14 @@ public class ShapesMain {
         DataReaderImpl dataReader = new DataReaderImpl();
         TetrahedronPointsParserImpl tetrahedrPointsParser = new TetrahedronPointsParserImpl();
         TetrahedronRepositoryCreatorImpl tetrahedronRepositoryCreator = new TetrahedronRepositoryCreatorImpl();
-        TetrahedronRepository tetrahedronRepository;;
+        TetrahedronRepositoryImpl tetrahedronRepositoryImpl;;
 
         try {
             ArrayList<String> datafromFile = dataReader.readDataFromFile("./src/main/resources/data/data.txt");
             ArrayList<Point> points = tetrahedrPointsParser.parsePoints(datafromFile);
-            tetrahedronRepository=tetrahedronRepositoryCreator.createTetrahedronRepository(points);
+            tetrahedronRepositoryImpl =tetrahedronRepositoryCreator.createTetrahedronRepository(points);
 
-            logger.info(tetrahedronRepository.getAll());
+            logger.info(tetrahedronRepositoryImpl.getAll());
         } catch (ShapeException e) {
             e.printStackTrace();
         }

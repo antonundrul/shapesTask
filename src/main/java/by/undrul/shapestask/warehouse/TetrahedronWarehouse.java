@@ -29,6 +29,11 @@ public class TetrahedronWarehouse {
         return parametrsMap.put(key, parametr);
     }
 
+    public TetrahedronParametr removeParametr(int key){
+        TetrahedronParametr parametr = parametrsMap.remove(key);
+        return parametr;
+    }
+
     public Collection<TetrahedronParametr> parametrs(){
         return parametrsMap.values();
     }

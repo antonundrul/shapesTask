@@ -1,10 +1,10 @@
 package by.undrul.shapestask.creator;
 
 import by.undrul.shapestask.entity.Point;
-import by.undrul.shapestask.repozitory.TetrahedronRepository;
+import by.undrul.shapestask.repozitory.impl.TetrahedronRepositoryImpl;
 
 import java.util.ArrayList;
 
 public interface TetrahedronRepositoryCreator {
-    TetrahedronRepository createTetrahedronRepository(ArrayList<Point> points);
+    TetrahedronRepositoryImpl createTetrahedronRepository(ArrayList<Point> points);
 }
