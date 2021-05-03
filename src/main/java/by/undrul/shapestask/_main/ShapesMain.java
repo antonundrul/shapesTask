@@ -1,11 +1,11 @@
-package by.undrul.shapestask;
+package by.undrul.shapestask._main;
 
 import by.undrul.shapestask.creator.impl.TetrahedronRepositoryCreatorImpl;
 import by.undrul.shapestask.entity.Point;
 import by.undrul.shapestask.exception.ShapeException;
 import by.undrul.shapestask.parser.impl.TetrahedronPointsParserImpl;
 import by.undrul.shapestask.reader.impl.DataReaderImpl;
-import by.undrul.shapestask.repozitory.impl.TetrahedronRepositoryImpl;
+import by.undrul.shapestask.repository.impl.TetrahedronRepositoryImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

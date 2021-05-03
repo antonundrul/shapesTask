@@ -4,7 +4,7 @@ import by.undrul.shapestask.creator.TetrahedronRepositoryCreator;
 import by.undrul.shapestask.entity.Point;
 import by.undrul.shapestask.entity.Tetrahedron;
 import by.undrul.shapestask.factory.impl.TetrahedronFactoryImpl;
-import by.undrul.shapestask.repozitory.impl.TetrahedronRepositoryImpl;
+import by.undrul.shapestask.repository.impl.TetrahedronRepositoryImpl;
 import by.undrul.shapestask.validator.TetrahedronValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

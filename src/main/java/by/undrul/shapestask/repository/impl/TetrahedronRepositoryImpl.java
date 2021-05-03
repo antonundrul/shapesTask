@@ -1,25 +1,28 @@
-package by.undrul.shapestask.repozitory.impl;
+package by.undrul.shapestask.repository.impl;
 
 import by.undrul.shapestask.entity.Tetrahedron;
-import by.undrul.shapestask.repozitory.TetrahedronRepository;
+import by.undrul.shapestask.repository.Specification;
+import by.undrul.shapestask.repository.TetrahedronRepository;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class TetrahedronRepositoryImpl implements TetrahedronRepository {
     private ArrayList<Tetrahedron> tetrahedrons;
     private static TetrahedronRepositoryImpl instance;
 
-    private TetrahedronRepositoryImpl() {
-        tetrahedrons = new ArrayList<>();
-    }
-
     public static TetrahedronRepositoryImpl getInstance() {
         if (instance == null) {
             instance = new TetrahedronRepositoryImpl();
         }
         return instance;
+    }
+
+    private TetrahedronRepositoryImpl() {
+        tetrahedrons = new ArrayList<>();
     }
 
     @Override
@@ -33,13 +36,30 @@ public class TetrahedronRepositoryImpl implements TetrahedronRepository {
     }
 
     @Override
-    public Tetrahedron getTetrahedron(int index) {
-        return tetrahedrons.get(index);
+    public Optional<Tetrahedron> getTetrahedron(int index) {
+        Tetrahedron tetrahedron = tetrahedrons.get(index);
+        return tetrahedron==null?Optional.empty():Optional.of(tetrahedron);
     }
 
     @Override
     public ArrayList<Tetrahedron> getAll() {
         return tetrahedrons;
+    }
+
+    @Override
+    public ArrayList<Tetrahedron> query(Specification specification) {
+        ArrayList<Tetrahedron> result = new ArrayList<>();
+        for (Tetrahedron tetrahedron : tetrahedrons) {
+            if (specification.specifyTetrahedron(tetrahedron)) {
+                result.add(tetrahedron);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public List<Tetrahedron> queryStream(Specification specification) {
+        return tetrahedrons.stream().filter(specification::specifyTetrahedron).collect(Collectors.toList());
     }
 
     @Override
