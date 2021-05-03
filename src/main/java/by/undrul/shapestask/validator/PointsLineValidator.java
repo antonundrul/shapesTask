@@ -19,13 +19,12 @@ public class PointsLineValidator {
                     isVal = true;
                 } else {
                     isVal = false;
-                    logger.info("The string "+line+" has an invalid parametr");
+                    logger.info("The string " + line + " has an invalid parametr");
                     break;
                 }
             }
-        }
-        else {
-            logger.info("The string "+line+" has not enough parameters "+elements.length);
+        } else {
+            logger.info("The string " + line + " has not enough parameters " + elements.length);
         }
 
         return isVal;

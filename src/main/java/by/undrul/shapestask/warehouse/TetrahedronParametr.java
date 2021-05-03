@@ -1,7 +1,5 @@
 package by.undrul.shapestask.warehouse;
 
-import java.util.Objects;
-
 public class TetrahedronParametr {
     private double surfaceArea;
     private double volume;

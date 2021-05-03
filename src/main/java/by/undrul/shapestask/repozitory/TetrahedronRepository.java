@@ -4,7 +4,6 @@ import by.undrul.shapestask.entity.Tetrahedron;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 
 public interface TetrahedronRepository {
     void add(Tetrahedron tetrahedron);

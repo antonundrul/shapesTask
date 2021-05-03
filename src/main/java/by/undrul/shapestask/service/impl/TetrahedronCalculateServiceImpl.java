@@ -17,8 +17,8 @@ public class TetrahedronCalculateServiceImpl implements TetrahedronCalculateServ
         logger.info("Method to calculate volume of tetrahedron start");
         double height = calculateHeight(tetrahedron);
         double baseArea = calculateBaseArea(tetrahedron);
-        double volume = height*baseArea/3;
-        logger.info("Volume of tetrahedron with id="+tetrahedron.getId()+" : "+volume);
+        double volume = height * baseArea / 3;
+        logger.info("Volume of tetrahedron with id=" + tetrahedron.getId() + " : " + volume);
         return volume;
     }
 
@@ -31,12 +31,12 @@ public class TetrahedronCalculateServiceImpl implements TetrahedronCalculateServ
         Point basePoint2 = tetrahedron.getBasePoint2();
         Point basePoint3 = tetrahedron.getBasePoint3();
 
-        double area1=calculateFaceArea(apexPoint,basePoint1,basePoint2);
-        double area2=calculateFaceArea(apexPoint,basePoint2,basePoint3);
-        double area3=calculateFaceArea(apexPoint,basePoint3,basePoint1);
+        double area1 = calculateFaceArea(apexPoint, basePoint1, basePoint2);
+        double area2 = calculateFaceArea(apexPoint, basePoint2, basePoint3);
+        double area3 = calculateFaceArea(apexPoint, basePoint3, basePoint1);
         double baseArea = calculateBaseArea(tetrahedron);
 
-        double surfaceArea = area1+area2+area3+baseArea;
+        double surfaceArea = area1 + area2 + area3 + baseArea;
 
         return surfaceArea;
     }
@@ -61,7 +61,7 @@ public class TetrahedronCalculateServiceImpl implements TetrahedronCalculateServ
             height = Math.abs(apexPoint.getZ() - basePoint1.getZ());
         }
 
-        logger.info("Height of tetrahedron with id="+tetrahedron.getId()+" : "+height);
+        logger.info("Height of tetrahedron with id=" + tetrahedron.getId() + " : " + height);
         return height;
     }
 
@@ -81,7 +81,7 @@ public class TetrahedronCalculateServiceImpl implements TetrahedronCalculateServ
 
         double perimeter = baseEdge1 + baseEdge2 + baseEdge3;
 
-        logger.info("Base perimeter of tetrahedron with id="+tetrahedron.getId()+" : "+perimeter);
+        logger.info("Base perimeter of tetrahedron with id=" + tetrahedron.getId() + " : " + perimeter);
         return perimeter;
     }
 
@@ -93,22 +93,22 @@ public class TetrahedronCalculateServiceImpl implements TetrahedronCalculateServ
         Point basePoint2 = tetrahedron.getBasePoint2();
         Point basePoint3 = tetrahedron.getBasePoint3();
 
-        double area = calculateFaceArea(basePoint1,basePoint2,basePoint3);
+        double area = calculateFaceArea(basePoint1, basePoint2, basePoint3);
 
-        logger.info("Base area of tetrahedron with id="+tetrahedron.getId()+" : "+area);
+        logger.info("Base area of tetrahedron with id=" + tetrahedron.getId() + " : " + area);
         return area;
     }
 
-    private double calculateFaceArea(Point point1, Point point2, Point point3){
+    private double calculateFaceArea(Point point1, Point point2, Point point3) {
         DistanceServiceImpl distanceService = new DistanceServiceImpl();
 
         double edge1 = distanceService.calculateDistanceBetweenPoints(point1, point2);
         double edge2 = distanceService.calculateDistanceBetweenPoints(point2, point3);
         double edge3 = distanceService.calculateDistanceBetweenPoints(point3, point1);
 
-        double p = (edge1+edge2+edge3)/2;
+        double p = (edge1 + edge2 + edge3) / 2;
 
-        double area = Math.sqrt(p*(p-edge1)*(p-edge2)*(p-edge3));
+        double area = Math.sqrt(p * (p - edge1) * (p - edge2) * (p - edge3));
 
         return area;
     }

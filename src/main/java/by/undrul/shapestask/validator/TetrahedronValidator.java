@@ -25,7 +25,6 @@ public class TetrahedronValidator {
         //final boolean b = baseEdge1 == baseEdge2 && baseEdge2 == baseEdge3 && baseEdge3 == side1 && side1 == side2 && side2 == side3;
 
 
-
         if (basePoint1.getX() == basePoint2.getX() && basePoint2.getX() == basePoint3.getX() && basePoint1.getX() != apexPoint.getX()) {
             if (basePoint1.getY() == basePoint2.getY() && basePoint2.getY() != basePoint3.getY() ||
                     basePoint1.getY() == basePoint3.getY() && basePoint1.getY() != basePoint2.getY() ||

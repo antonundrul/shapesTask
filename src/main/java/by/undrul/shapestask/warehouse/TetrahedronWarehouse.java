@@ -6,35 +6,35 @@ import java.util.Map;
 
 public class TetrahedronWarehouse {
     private static TetrahedronWarehouse instance;
-    private Map<Integer,TetrahedronParametr> parametrsMap;
+    private Map<Integer, TetrahedronParametr> parametrsMap;
 
-    private TetrahedronWarehouse(){
+    private TetrahedronWarehouse() {
         parametrsMap = new HashMap<>();
     }
 
-    public static TetrahedronWarehouse getInstance(){
-        if(instance==null){
+    public static TetrahedronWarehouse getInstance() {
+        if (instance == null) {
             instance = new TetrahedronWarehouse();
         }
         return instance;
     }
 
-    public TetrahedronParametr getParametr(int key){
+    public TetrahedronParametr getParametr(int key) {
         return parametrsMap.get(key);
     }
 
-    public TetrahedronParametr putParametr(Integer key, double surfaceArea,double volume){
-        TetrahedronParametr parametr = new TetrahedronParametr(surfaceArea,volume);
+    public TetrahedronParametr putParametr(Integer key, double surfaceArea, double volume) {
+        TetrahedronParametr parametr = new TetrahedronParametr(surfaceArea, volume);
 
         return parametrsMap.put(key, parametr);
     }
 
-    public TetrahedronParametr removeParametr(int key){
+    public TetrahedronParametr removeParametr(int key) {
         TetrahedronParametr parametr = parametrsMap.remove(key);
         return parametr;
     }
 
-    public Collection<TetrahedronParametr> parametrs(){
+    public Collection<TetrahedronParametr> parametrs() {
         return parametrsMap.values();
     }
 }

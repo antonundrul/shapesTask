@@ -12,19 +12,18 @@ public class FileValidator {
 
         logger.info("Method to validate file start");
 
-        if(path==null||path.isEmpty()) {
-            logger.info("Filepath "+path+" is null or empty");
-           return false;
+        if (path == null || path.isEmpty()) {
+            logger.info("Filepath " + path + " is null or empty");
+            return false;
         }
 
         boolean flag = false;
         File file = new File(path);
 
-        if(file.exists()&file.length()>0){
-            flag=true;
-        }
-        else{
-            logger.info("File "+path+" doesn't exist or empty");
+        if (file.exists() & file.length() > 0) {
+            flag = true;
+        } else {
+            logger.info("File " + path + " doesn't exist or empty");
         }
 
         return flag;

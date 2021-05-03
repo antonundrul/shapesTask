@@ -1,8 +1,8 @@
 package by.undrul.shapestask.entity;
 
+import by.undrul.shapestask.observer.TetrahedronEvent;
 import by.undrul.shapestask.observer.TetrahedronObservable;
 import by.undrul.shapestask.observer.TetrahedronObserver;
-import by.undrul.shapestask.observer.TetrahedronEvent;
 
 import java.util.ArrayList;
 

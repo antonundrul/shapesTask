@@ -7,12 +7,10 @@ import by.undrul.shapestask.util.IdGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-
 public class TetrahedronFactoryImpl implements TetrahedronFactory {
     private static Logger logger = LogManager.getLogger();
 
-    public TetrahedronFactoryImpl(){
+    public TetrahedronFactoryImpl() {
     }
 
     @Override

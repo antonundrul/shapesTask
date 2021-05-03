@@ -11,7 +11,7 @@ public class TetrahedronSurfaceAreaComparator implements Comparator<Tetrahedron>
         TetrahedronCalculateServiceImpl calculateService = new TetrahedronCalculateServiceImpl();
         double firstArea = calculateService.calculateSurfaceArea(o1);
         double secondArea = calculateService.calculateSurfaceArea(o2);
-        int compare = Double.compare(firstArea,secondArea);
+        int compare = Double.compare(firstArea, secondArea);
         return compare;
     }
 }

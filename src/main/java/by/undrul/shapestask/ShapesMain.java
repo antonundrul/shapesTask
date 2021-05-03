@@ -19,12 +19,12 @@ public class ShapesMain {
         DataReaderImpl dataReader = new DataReaderImpl();
         TetrahedronPointsParserImpl tetrahedrPointsParser = new TetrahedronPointsParserImpl();
         TetrahedronRepositoryCreatorImpl tetrahedronRepositoryCreator = new TetrahedronRepositoryCreatorImpl();
-        TetrahedronRepositoryImpl tetrahedronRepositoryImpl;;
+        TetrahedronRepositoryImpl tetrahedronRepositoryImpl;
 
         try {
             ArrayList<String> datafromFile = dataReader.readDataFromFile("./src/main/resources/data/data.txt");
             ArrayList<Point> points = tetrahedrPointsParser.parsePoints(datafromFile);
-            tetrahedronRepositoryImpl =tetrahedronRepositoryCreator.createTetrahedronRepository(points);
+            tetrahedronRepositoryImpl = tetrahedronRepositoryCreator.createTetrahedronRepository(points);
 
             logger.info(tetrahedronRepositoryImpl.getAll());
         } catch (ShapeException e) {

@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class TetrahedronObserverImpl implements by.undrul.shapestask.observer.TetrahedronObserver {
-        private static Logger logger = LogManager.getLogger();
+    private static Logger logger = LogManager.getLogger();
 
     @Override
     public void changeParameters(TetrahedronEvent event) {
@@ -16,7 +16,7 @@ public class TetrahedronObserverImpl implements by.undrul.shapestask.observer.Te
         TetrahedronCalculateServiceImpl service = new TetrahedronCalculateServiceImpl();
         TetrahedronWarehouse warehouse = TetrahedronWarehouse.getInstance();
 
-        int  tetrahedronId = tetrahedron.getId();
+        int tetrahedronId = tetrahedron.getId();
         double volume = service.calculateVolume(tetrahedron);
         double surfaceArea = service.calculateSurfaceArea(tetrahedron);
         warehouse.putParametr(tetrahedronId, surfaceArea, volume);

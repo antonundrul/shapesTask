@@ -11,7 +11,7 @@ public class TetrahedronVolumeComparator implements Comparator<Tetrahedron> {
         TetrahedronCalculateServiceImpl calculateService = new TetrahedronCalculateServiceImpl();
         double firstVolume = calculateService.calculateVolume(o1);
         double secondVolume = calculateService.calculateVolume(o2);
-        int compare = Double.compare(firstVolume,secondVolume);
+        int compare = Double.compare(firstVolume, secondVolume);
         return compare;
     }
 }
