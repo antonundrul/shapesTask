@@ -1,4 +1,4 @@
-package by.undrul;
+package by.undrul.shapestask;
 
 import static org.junit.Assert.assertTrue;
 

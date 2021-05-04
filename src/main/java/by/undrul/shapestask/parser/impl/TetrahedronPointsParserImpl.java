@@ -1,8 +1,8 @@
 package by.undrul.shapestask.parser.impl;
 
+import by.undrul.shapestask.parser.TetrahedronPointsParser;
 import by.undrul.shapestask.entity.Point;
 import by.undrul.shapestask.factory.impl.PointFactoryImpl;
-import by.undrul.shapestask.parser.TetrahedronPointsParser;
 import by.undrul.shapestask.validator.PointsLineValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -6,8 +6,6 @@ import by.undrul.shapestask.creator.impl.TetrahedronWarehouseCreatorImpl;
 import by.undrul.shapestask.entity.Point;
 import by.undrul.shapestask.entity.Tetrahedron;
 import by.undrul.shapestask.exception.ShapeException;
-import by.undrul.shapestask.factory.TetrahedronFactory;
-import by.undrul.shapestask.factory.impl.TetrahedronFactoryImpl;
 import by.undrul.shapestask.parser.impl.TetrahedronPointsParserImpl;
 import by.undrul.shapestask.reader.impl.DataReaderImpl;
 import by.undrul.shapestask.repository.Specification;
